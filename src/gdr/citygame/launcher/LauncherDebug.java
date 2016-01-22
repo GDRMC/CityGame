@@ -5,7 +5,6 @@ import gdr.citygame.player.*;
 import gdr.citygame.debug.*;
 import gdr.citygame.gamerules.*;
 import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 
 public class LauncherDebug {
 
@@ -16,8 +15,7 @@ public class LauncherDebug {
         debug.dProgramHeader();
 
         try {
-            UIManager.setLookAndFeel("com.seaglasslookandfeel.SeaGlassLookAndFeel");
-            System.setProperty("SeaGlass.JTextArea.drawLineSeparator", "false");
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception e) {
             e.printStackTrace();
         }
