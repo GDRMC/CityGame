@@ -1,12 +1,12 @@
 package gdr.citygame.debug;
 
-import gdr.citygame.frames.Prompt;
+import gdr.citygame.frames.*;
 import gdr.citygame.plate.*;
 
 public class ConsoleHandler {
 
     private static ConsoleHandler console;
-    private static Prompt window;
+    private static ConsolePrompt window;
 
     private ConsoleHandler() {
         
@@ -15,7 +15,7 @@ public class ConsoleHandler {
     public static synchronized ConsoleHandler getInstance() {
         if (console == null) {
             console = new ConsoleHandler();
-            window = new Prompt();
+            window = new ConsolePrompt();
             window.setVisible(true);
         }
         return console;
@@ -44,17 +44,14 @@ public class ConsoleHandler {
     }
     
     public void dProgramHeader(){
-        System.out.println("=====| CityGame |=====");
-        System.out.println("= Development by GDR =");
-        System.out.println("=    v0 dev build    =");
-        System.out.println("======================");
         this.window.writeln("=====| CityGame |=====");
         this.window.writeln("= Development by GDR =");
         this.window.writeln("=    v0 dev build    =");
         this.window.writeln("======================");
+        this.window.msg("This program uses Sea Glass (v0.2) look and feel !\n");
     }
     
-    public Prompt getPromptWindow(){
+    public ConsolePrompt getPromptWindow(){
         return this.window;
     }
 }
